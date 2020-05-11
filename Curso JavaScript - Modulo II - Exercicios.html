@@ -1,0 +1,85 @@
+<DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Curso de JavaScript</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="box"></div>
+<button class="btn">Clique</button>
+    </div>
+
+    <script>
+//Exercícios: Módulo 02 - 1º exercício - Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadradovermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deveaparecer na tela.
+
+    var btnElement = document.querySelector('button.btn');
+
+    btnElement.onclick = function(){
+      var boxElement = document.querySelector('.box');
+      boxElement.style.width = 100;
+      boxElement.style.height = 100;
+      boxElement.style.backgroundColor = '#F00';
+
+    }
+
+    function getRandomColor(){
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    //2º exercício - Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima dealgum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+
+    var newColor = getRandomColor(); // #E943F0
+
+    var boxElement = document.querySelector('.box');
+    boxElement.onmousemove = function(){
+    boxElement.style.backgroundColor = newColor;
+    }
+
+      </script>
+    <div id="lista">
+      <!--<input type="text" name="lista"/><br> -->
+      <input type="text" name="nome" id="nome">
+      <button class="btn2" onclick="adicionar()">Adicionar</button>
+
+    </div>
+<script>
+
+//3º exercício - A partir do seguinte vetor:var nomes = ["Diego", "Gabriel", "Lucas"];
+//Bunga
+var nomes = ["Diego", "Gabriel", "Lucas"];
+
+for(i = 0; i <= nomes.length -1; i++){
+  var linkElement = document.createElement('ul');
+  var textElement = document.createTextNode(nomes[i]);
+  linkElement.appendChild(textElement);
+  var containerElement = document.querySelector('#lista');
+  containerElement.appendChild(linkElement);
+
+}
+
+</script>
+
+<script>
+// 4º exercício - Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+var btnElement2 = document.querySelector('button.btn2');
+var campoTexto = document.querySelector('input[name=nome]');
+
+
+btnElement2.onclick = function adicionar(){
+  var linkElement = document.createElement('ul');
+  var textElement = document.createTextNode(campoTexto.value);
+  linkElement.appendChild(textElement);
+  var containerElement = document.querySelector('#lista');
+  containerElement.appendChild(linkElement);
+}
+</script>
+
+
+  </body>
+</html>

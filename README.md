@@ -1,1 +1,1 @@
-# Estudos feitos em JavaScript com base no treinamento basico da RocketSeat
+# CRUD feito em Java para embasar conhecimentos de POO, Servlets, Html e banco de dados mysql.
